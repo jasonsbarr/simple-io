@@ -14,6 +14,7 @@ import readlineSync from "readline-sync";
  * @memberof Input
  * @param {String} prompt
  * @param {String|Number|RegExp|Function|Array} [limit=null] Limits valid input to specified choices.
+ * @param {String} [limitMessage=null] Message to display when user enters invalid input
  * @returns {String}
  * @example
  * input("Tell me something good: ") // no limit on input
@@ -23,9 +24,10 @@ import readlineSync from "readline-sync";
  * input("Enter a valid IPv4 address: ", function(input) {
  *  return require("net").isIp(input);
  * }) // only allows you to enter a value for which the function returns true
+ * input("Say 'potato': ", "potato", "You can only say 'potato'!") // example of limitMessage
  */
-export function input(prompt, limit = null) {
-  return readlineSync.question(prompt, { limit });
+export function input(prompt, limit = null, limitMessage = null) {
+  return readlineSync.question(prompt, { limit, limitMessage });
 }
 
 /**
@@ -68,14 +70,15 @@ export function inputHidden(prompt) {
  * @memberof Input
  * @param {String} prompt
  * @param {String|Number|Array} [limit=null] Limit which keys are accepted as input
+ * @param {String} [limitMessage=null] Message to display when user enters invalid input
  * @returns
  * @example
  * inputKey("Press any key"); // no limit
  * inputKey("Press a, b, or c", "abc") // limits valid inputs to a, b, or c
  * inputKey("Press a, b, or c", ["a", "b", "c"]) // limits valid inputs to a, b, or c
  */
-export function inputKey(prompt, limit = null) {
-  return readlineSync.keyIn(prompt, { limit });
+export function inputKey(prompt, limit = null, limitMessage = null) {
+  return readlineSync.keyIn(prompt, { limit, limitMessage });
 }
 
 /**
@@ -116,8 +119,9 @@ export function inputYOrN(prompt) {
  *
  * @param {String} prompt
  * @param {String|Number|RegExp|Function|Array} [limit=null] Limits valid input to specified choices.
+ * @param {String} [limitMessage=null] Message to display when user enters invalid input
  * @returns {undefined}
  */
-export function pauseForInput(prompt, limit = null) {
-  return readlineSync.keyInPause(prompt, { limit });
+export function pauseForInput(prompt, limit = null, limitMessage = null) {
+  return readlineSync.keyInPause(prompt, { limit, limitMessage });
 }
