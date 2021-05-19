@@ -1,4 +1,11 @@
-import { readFile, readJSONFile, readTextFile } from "./files.js";
+import {
+  dirname,
+  filepath,
+  joinPath,
+  readFile,
+  readJSONFile,
+  readTextFile,
+} from "./files.js";
 
 import {
   input,
@@ -14,6 +21,9 @@ import { print, println } from "./output.js";
 
 export {
   // File handling functions
+  dirname,
+  filepath,
+  joinPath,
   readFile,
   readJSONFile,
   readTextFile,
