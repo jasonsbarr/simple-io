@@ -13,7 +13,7 @@ import readlineSync from "readline-sync";
  * @since 0.1.0
  * @memberof Input
  * @param {String} prompt
- * @param {String[]} [limit=null] Limits valid input to an array of choices
+ * @param {String|Number|RegExp|Function|Array} [limit=null] Limits valid input to an array of choices.
  * @returns {String}
  */
 export function input(prompt, limit = null) {
@@ -58,7 +58,7 @@ export function inputHidden(prompt) {
  * @since 0.1.0
  * @memberof Input
  * @param {String} prompt
- * @param {String[]} [limit=null] Limit which keys are accepted as input
+ * @param {String|Number|Array} [limit=null] Limit which keys are accepted as input
  * @returns
  */
 export function inputKey(prompt, limit = null) {
