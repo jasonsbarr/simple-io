@@ -122,6 +122,10 @@ exports.inputYOrN = inputYOrN;
 /**
  * Pauses script execution to wait for the user to press a key
  *
+ * @function pauseForInput
+ * @static
+ * @since 0.1.0
+ * @memberof Input
  * @param {String} prompt
  * @param {String|Number|RegExp|Function|Array} [limit=null] Limits valid input to specified choices.
  * @param {String} [limitMessage=null] Message to display when user enters invalid input
