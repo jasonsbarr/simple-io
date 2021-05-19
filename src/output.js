@@ -36,3 +36,7 @@ export function print(...args) {
     i++;
   }
 }
+
+export function println(...args) {
+  console.log(stringify(...args));
+}

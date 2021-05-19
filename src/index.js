@@ -8,7 +8,7 @@ import {
   pauseForInput,
 } from "./input.js";
 
-import { print } from "./output.js";
+import { print, println } from "./output.js";
 
 export {
   // Input functions
@@ -21,4 +21,5 @@ export {
   pauseForInput,
   // Output functions
   print,
+  println,
 };
