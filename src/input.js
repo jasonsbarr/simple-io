@@ -15,6 +15,14 @@ import readlineSync from "readline-sync";
  * @param {String} prompt
  * @param {String|Number|RegExp|Function|Array} [limit=null] Limits valid input to an array of choices.
  * @returns {String}
+ * @example
+ * input("Tell me something good: ") // no limit on input
+ * input("Say 'potato': ", "potato") // can only input "potato"
+ * input("Give me a word ending in 's': ", /.*s$/) // can only input words ending in "s"
+ * input("How's the weather? ", ["rainy", "sunny", "cloudy", "snowing"]) // limits choices to those 4 words
+ * input("Enter a valid IPv4 address: ", function(input) {
+ *  return require("net").isIp(input);
+ * }) // only allows you to enter a value for which the function returns true
  */
 export function input(prompt, limit = null) {
   return readlineSync.question(prompt, { limit });
@@ -60,6 +68,10 @@ export function inputHidden(prompt) {
  * @param {String} prompt
  * @param {String|Number|Array} [limit=null] Limit which keys are accepted as input
  * @returns
+ * @example
+ * inputKey("Press any key"); // no limit
+ * inputKey("Press a, b, or c", "abc") // limits valid inputs to a, b, or c
+ * inputKey("Press a, b, or c", ["a", "b", "c"]) // limits valid inputs to a, b, or c
  */
 export function inputKey(prompt, limit = null) {
   return readlineSync.keyIn(prompt, { limit });
@@ -71,6 +83,8 @@ export function inputKey(prompt, limit = null) {
  * @param {String} prompt
  * @param {String} defaultInput Returns this if user inputs no value
  * @returns {String}
+ * @example
+ * inputWithDefault("How are you doing? ", "meh...") // returns "meh..." if user enters no input
  */
 export function inputWithDefault(prompt, defaultInput) {
   return readlineSync.question(prompt, {
