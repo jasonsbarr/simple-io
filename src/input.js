@@ -13,7 +13,7 @@ import readlineSync from "readline-sync";
  * @since 0.1.0
  * @memberof Input
  * @param {String} prompt
- * @param {String|Number|RegExp|Function|Array} [limit=null] Limits valid input to an array of choices.
+ * @param {String|Number|RegExp|Function|Array} [limit=null] Limits valid input to specified choices.
  * @returns {String}
  * @example
  * input("Tell me something good: ") // no limit on input
@@ -62,6 +62,7 @@ export function inputHidden(prompt) {
 /**
  * Gets a single-key input from the user
  *
+ * @function inputKey
  * @static
  * @since 0.1.0
  * @memberof Input
@@ -80,6 +81,10 @@ export function inputKey(prompt, limit = null) {
 /**
  * Prompts the user for input and returns a default value if there is no input
  *
+ * @function inputWithDefault
+ * @static
+ * @since 0.1.0
+ * @memberof Input
  * @param {String} prompt
  * @param {String} defaultInput Returns this if user inputs no value
  * @returns {String}
@@ -104,4 +109,15 @@ export function inputWithDefault(prompt, defaultInput) {
  */
 export function inputYOrN(prompt) {
   return readlineSync.keyInYNStrict(prompt);
+}
+
+/**
+ * Pauses script execution to wait for the user to press a key
+ *
+ * @param {String} prompt
+ * @param {String|Number|RegExp|Function|Array} [limit=null] Limits valid input to specified choices.
+ * @returns {undefined}
+ */
+export function pauseForInput(prompt, limit = null) {
+  return readlineSync.keyInPause(prompt, { limit });
 }

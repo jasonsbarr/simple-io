@@ -5,6 +5,7 @@ import {
   inputKey,
   inputWithDefault,
   inputYOrN,
+  pauseForInput,
 } from "./input";
 
 export {
@@ -15,4 +16,5 @@ export {
   inputKey,
   inputWithDefault,
   inputYOrN,
+  pauseForInput,
 };
