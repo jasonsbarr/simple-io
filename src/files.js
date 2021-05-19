@@ -2,8 +2,19 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 
+function getAbsPath(filePath) {
+  if (filePath.startsWith("./") || filePath.startsWith("../")) {
+    filePath = joinPath(path.dirname(process.argv[1]), filePath);
+  }
+  return filePath;
+}
+
 export function dirname() {
   return path.dirname(fileURLToPath(import.meta.url));
+}
+
+export function filename() {
+  return path.basename(process.argv[1]);
 }
 
 export function filepath() {
@@ -15,18 +26,16 @@ export function joinPath(...args) {
 }
 
 export function readFile(filePath, encoding = null) {
-  if (filePath.startsWith("./") || filePath.startsWith("../")) {
-    filePath = joinPath(path.dirname(process.argv[1]), filePath);
-  }
+  filePath = getAbsPath(filePath);
   return fs.readFileSync(filePath, { encoding });
 }
 
-export function readJSONFile(path) {
-  return JSON.parse(readFile(path, "utf8"));
+export function readJSONFile(filePath) {
+  return JSON.parse(readFile(filePath, "utf8"));
 }
 
-export function readLines(path, encoding = "utf8") {
-  const file = readFile(path, encoding);
+export function readLines(filePath, encoding = "utf8") {
+  const file = readFile(filePath, encoding);
   let lines = [];
   if (file.match(/\r\n/)) {
     lines = file.split("\r\n");
@@ -40,6 +49,11 @@ export function readLines(path, encoding = "utf8") {
   return lines;
 }
 
-export function readTextFile(path, encoding = "utf8") {
-  return fs.readFileSync(path, { encoding });
+export function readTextFile(filePath, encoding = "utf8") {
+  return readFile(filePath, encoding);
+}
+
+export function writeFile(filePath, data, encoding = null) {
+  filePath = getAbsPath(filePath);
+  return fs.writeFileSync(filePath, data, { encoding });
 }

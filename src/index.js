@@ -1,10 +1,13 @@
 import {
   dirname,
+  filename,
   filepath,
   joinPath,
   readFile,
   readJSONFile,
+  readLines,
   readTextFile,
+  writeFile,
 } from "./files.js";
 
 import {
@@ -22,11 +25,14 @@ import { print, println } from "./output.js";
 export {
   // File handling functions
   dirname,
+  filename,
   filepath,
   joinPath,
   readFile,
   readJSONFile,
+  readLines,
   readTextFile,
+  writeFile,
   // Input functions
   input,
   inputChoice,
