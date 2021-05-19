@@ -1,8 +1,9 @@
-import { input, inputPassword, inputYOrN } from "./input";
+import { input, inputChoice, inputHidden, inputYOrN } from "./input";
 
 export {
   // Input functions
   input,
-  inputPassword,
+  inputChoice,
+  inputHidden,
   inputYOrN,
 };
