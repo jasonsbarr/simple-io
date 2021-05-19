@@ -16,10 +16,6 @@
     "build:packages": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json && node ./scripts/set-package-json.js",
     "publish:package": "npm run build && npm run docs && npm run publish:push && npm publish",
     "publish:push": "git add . && git commit -m 'Publish to NPM' && git push",
-    "test": "jest",
-    "test:all": "jest --all",
-    "test:watch": "jest --watch",
-    "test:changed": "jest --onlyChanged",
     "docs": "rm -rf docs/ && jsdoc -c .jsdoc.json",
     "prepare": "husky install",
     "format": "prettier --write . && eslint --fix"
@@ -47,7 +43,6 @@
     "eslint-plugin-jsdoc": "^32.3.0",
     "eslint-plugin-prettier": "^3.4.0",
     "husky": "^6.0.0",
-    "jest": "^26.6.3",
     "jsdoc": "^3.6.6",
     "prettier": "^2.2.1",
     "typescript": "^4.2.4"
