@@ -27,14 +27,7 @@ function stringify(...args) {
 }
 
 export function print(...args) {
-  let i = 0;
-  for (let arg of args) {
-    process.stdout.write(stringify(arg));
-    if (i < args.length - 1) {
-      process.stdout.write(" ");
-    }
-    i++;
-  }
+  process.stdout.write(stringify(...args));
 }
 
 export function println(...args) {
