@@ -13,10 +13,11 @@ import readlineSync from "readline-sync";
  * @since 0.1.0
  * @memberof Input
  * @param {String} prompt
+ * @param {String[]} [limit=null] Limits valid input to an array of choices
  * @returns {String}
  */
-export function input(prompt) {
-  return readlineSync.question(prompt);
+export function input(prompt, limit = null) {
+  return readlineSync.question(prompt, { limit });
 }
 
 /**
@@ -47,6 +48,33 @@ export function inputChoice(choices, prompt) {
 export function inputHidden(prompt) {
   return readlineSync.question(prompt, {
     hideEchoBack: true,
+  });
+}
+
+/**
+ * Gets a single-key input from the user
+ *
+ * @static
+ * @since 0.1.0
+ * @memberof Input
+ * @param {String} prompt
+ * @param {String[]} [limit=null] Limit which keys are accepted as input
+ * @returns
+ */
+export function inputKey(prompt, limit = null) {
+  return readlineSync.keyIn(prompt, { limit });
+}
+
+/**
+ * Prompts the user for input and returns a default value if there is no input
+ *
+ * @param {String} prompt
+ * @param {String} defaultInput Returns this if user inputs no value
+ * @returns {String}
+ */
+export function inputWithDefault(prompt, defaultInput) {
+  return readlineSync.question(prompt, {
+    defaultInput,
   });
 }
 
