@@ -4,7 +4,7 @@
   "description": "A collection of simple file and console IO functions",
   "main": "src/index.js",
   "type": "module",
-  "homepage": "",
+  "homepage": "https://github.com/jasonsbarr/simple-io#readme",
   "exports": {
     ".": {
       "import": "./dist/es/index.js",
@@ -25,10 +25,7 @@
     "url": "git+https://github.com/jasonsbarr/simple-io.git"
   },
   "keywords": [],
-  "author": {
-    "name": "Jason Barr",
-    "email": "jason@jasonsbarr.com"
-  },
+  "author": "Jason Barr <jason@jasonsbarr.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jasonsbarr/simple-io/issues"
