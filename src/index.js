@@ -6,7 +6,9 @@ import {
   inputWithDefault,
   inputYOrN,
   pauseForInput,
-} from "./input";
+} from "./input.js";
+
+import { print } from "./output.js";
 
 export {
   // Input functions
@@ -17,4 +19,6 @@ export {
   inputWithDefault,
   inputYOrN,
   pauseForInput,
+  // Output functions
+  print,
 };
