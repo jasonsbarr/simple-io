@@ -15,7 +15,7 @@ npm install @jasonsbarr/simple-io
 You can either `require` or `import` the package based on your needs:
 
 ```js
-import { readFile } from "@jasonsbarr/simple-io"
+import { readFile } from "@jasonsbarr/simple-io";
 ```
 
 or
@@ -24,4 +24,4 @@ or
 const { readFile } = require("@jasonsbarr/simple-io");
 ```
 
-See [documentation]("https://jasonsbarr.github.io/simple-io/docs/") for more information.
+See [documentation]("https://jasonsbarr.github.io/simple-io/") for more information.
