@@ -71,7 +71,7 @@ export function inputHidden(prompt) {
  * @param {String} prompt
  * @param {String|Number|Array} [limit=null] Limit which keys are accepted as input
  * @param {String} [limitMessage=null] Message to display when user enters invalid input
- * @returns
+ * @returns {String}
  * @example
  * inputKey("Press any key"); // no limit
  * inputKey("Press a, b, or c", "abc") // limits valid inputs to a, b, or c

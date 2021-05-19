@@ -3,7 +3,7 @@ import {
   appendTextFile,
   dirname,
   filename,
-  filepath,
+  fileWithPath,
   joinPath,
   readFile,
   readJSONFile,
@@ -13,7 +13,7 @@ import {
   writeJSONFile,
   writeLines,
   writeTextFile,
-} from "./files.js";
+} from "./file.js";
 
 import {
   input,
@@ -33,7 +33,7 @@ export {
   appendTextFile,
   dirname,
   filename,
-  filepath,
+  fileWithPath,
   joinPath,
   readFile,
   readJSONFile,
