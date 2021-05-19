@@ -24,4 +24,4 @@ or
 const { readFile } = require("@jasonsbarr/simple-io");
 ```
 
-See [documentation]("https://jasonsbarr.github.io/simple-io/") for more information.
+See [documentation](https://jasonsbarr.github.io/simple-io/) for more information.
