@@ -1,4 +1,6 @@
 import {
+  appendFile,
+  appendTextFile,
   dirname,
   filename,
   filepath,
@@ -8,6 +10,9 @@ import {
   readLines,
   readTextFile,
   writeFile,
+  writeJSONFile,
+  writeLines,
+  writeTextFile,
 } from "./files.js";
 
 import {
@@ -24,6 +29,8 @@ import { print, println } from "./output.js";
 
 export {
   // File handling functions
+  appendFile,
+  appendTextFile,
   dirname,
   filename,
   filepath,
@@ -33,6 +40,9 @@ export {
   readLines,
   readTextFile,
   writeFile,
+  writeJSONFile,
+  writeLines,
+  writeTextFile,
   // Input functions
   input,
   inputChoice,

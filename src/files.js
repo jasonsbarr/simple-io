@@ -9,6 +9,15 @@ function getAbsPath(filePath) {
   return filePath;
 }
 
+export function appendFile(filePath, data, encoding = null) {
+  filePath = getAbsPath(filePath);
+  return fs.appendFileSync(filePath, data, { encoding });
+}
+
+export function appendTextFile(filePath, data, encoding = "utf8") {
+  return appendFile(filePath, data, encoding);
+}
+
 export function dirname() {
   return path.dirname(fileURLToPath(import.meta.url));
 }
@@ -56,4 +65,21 @@ export function readTextFile(filePath, encoding = "utf8") {
 export function writeFile(filePath, data, encoding = null) {
   filePath = getAbsPath(filePath);
   return fs.writeFileSync(filePath, data, { encoding });
+}
+
+export function writeJSONFile(filePath, data) {
+  return writeFile(filePath, JSON.stringify(data), "utf8");
+}
+
+export function writeLines(filePath, data, encoding = "utf8") {
+  let lineSep = "\n";
+  if (process.platform == "win32") {
+    lineSep = "\r\n";
+  }
+  const text = data.join(lineSep);
+  return writeFile(filePath, text, encoding);
+}
+
+export function writeTextFile(filePath, data, encoding = "utf8") {
+  return writeFile(filePath, data, encoding);
 }
