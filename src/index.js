@@ -1,3 +1,8 @@
-import { input, inputPassword } from "./input";
+import { input, inputPassword, inputYOrN } from "./input";
 
-export { input, inputPassword };
+export {
+  // Input functions
+  input,
+  inputPassword,
+  inputYOrN,
+};

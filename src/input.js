@@ -34,3 +34,17 @@ export function inputPassword(prompt) {
     hideEchoBack: true,
   });
 }
+
+/**
+ * Displays a prompt and gets a Y/N response from the user
+ *
+ * @function inputYOrN
+ * @static
+ * @since 0.1.0
+ * @memberof Input
+ * @param {String} prompt
+ * @returns {Boolean} true for "Y", else false
+ */
+export function inputYOrN(prompt) {
+  return readlineSync.keyInYN(prompt);
+}
