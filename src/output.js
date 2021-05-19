@@ -1,4 +1,5 @@
 import util from "util";
+import { default as pPrintf } from "printf";
 
 /**
  * Convert output of any type to a string for display
@@ -28,6 +29,10 @@ function stringify(...args) {
 
 export function print(...args) {
   process.stdout.write(stringify(...args));
+}
+
+export function printf(format, ...args) {
+  pPrintf(process.stdout, format, ...args);
 }
 
 export function println(...args) {
