@@ -18,3 +18,19 @@ import readlineSync from "readline-sync";
 export function input(prompt) {
   return readlineSync.question(prompt);
 }
+
+/**
+ * Displays a prompt and gets input where the console output is replaced by '*'
+ *
+ * @function inputPassword
+ * @static
+ * @since 0.1.0
+ * @memberof Input
+ * @param {String} prompt
+ * @returns {String}
+ */
+export function inputPassword(prompt) {
+  return readlineSync.question(prompt, {
+    hideEchoBack: true,
+  });
+}
