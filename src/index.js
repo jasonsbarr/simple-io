@@ -1,3 +1,5 @@
+import { readFile, readTextFile } from "./files.js";
+
 import {
   input,
   inputChoice,
@@ -11,6 +13,9 @@ import {
 import { print, println } from "./output.js";
 
 export {
+  // File handling functions
+  readFile,
+  readTextFile,
   // Input functions
   input,
   inputChoice,
