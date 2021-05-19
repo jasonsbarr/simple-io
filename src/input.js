@@ -103,5 +103,5 @@ export function inputWithDefault(prompt, defaultInput) {
  * @returns {Boolean} true for "Y", else false
  */
 export function inputYOrN(prompt) {
-  return readlineSync.keyInYN(prompt);
+  return readlineSync.keyInYNStrict(prompt);
 }
